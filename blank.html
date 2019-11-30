@@ -37,16 +37,14 @@
             return
         }
         const game=()=>{
-            let x=8;
+            let x=0;
             while(x<5){
-                let playerSelection=prompt("Rock,Paper,Scissors");  
-                }   
-                let computerSelection=computerPlay();
-               alert(x);
+                playerSelection=prompt("Rock paper or scissors");
+                let computerSelection=computerPlay;
+                playGame(playerSelection, computerSelection);
                 x++;
             }
-        const playerSelection="paper";
-        computerSelection=computerPlay();
+        }
         game();
        // console.log(playGame(playerSelection, computerSelection));
   </script>
