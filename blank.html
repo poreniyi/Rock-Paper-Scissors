@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+        const computerPlay= () =>{
+           let number =Math.floor( (Math.random()*3)+1);
+           let choice=""
+            switch(number){
+                case 1:
+                choice="rock"
+                break;
+                case 2:
+                choice="paper"
+                break;
+                case 3:
+               choice ="scissors"
+                 break;
+            }
+            return choice;
+        }
+        const playGame= (playerSelection, computerSelection) =>{
+            playerSelection=playerSelection.toLowerCase();
+                if(playerSelection===computerSelection){
+                    return "You both chose:"+ playerSelection +" It's the same so it's a draw!!";
+                }else if(playerSelection==="rock" && computerSelection==="scissors"){
+                    return "You chose:"+playerSelection+" The computer chose:"+computerSelection+"You Win!!";
+                }else if(playerSelection==="paper"&& computerSelection=="rock"){
+                    return "You chose:"+playerSelection+" The computer chose:"+computerSelection+"You Win!!";
+                }else if(playerSelection==="scissors"&& computerSelection=="paper"){
+                    return "You chose:"+playerSelection+" The computer chose:"+computerSelection+"You Win!!";;
+                }else{
+                    return "You chose:" +playerSelection  +" The computer chose:"+computerSelection +" You lose!!";
+                }
+            return
+        }
+        const game=()=>{
+            let x=8;
+            while(x<5){
+                let playerSelection=prompt("Rock,Paper,Scissors");  
+                }   
+                let computerSelection=computerPlay();
+               alert(x);
+                x++;
+            }
+        const playerSelection="paper";
+        computerSelection=computerPlay();
+        game();
+       // console.log(playGame(playerSelection, computerSelection));
+  </script>
+</body>
+</html>
