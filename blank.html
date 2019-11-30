@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
   <title>Page Title</title>
 </head>
 <body>
   <script>
-        const computerPlay= () =>{
+            let playerWins=0;
+            let computerWins=0;
+            let draw=0;
+             const computerPlay= () =>{
            let number =Math.floor( (Math.random()*3)+1);
            let choice=""
             switch(number){
@@ -24,25 +28,41 @@
         const playGame= (playerSelection, computerSelection) =>{
             playerSelection=playerSelection.toLowerCase();
                 if(playerSelection===computerSelection){
-                    return "You both chose:"+ playerSelection +" It's the same so it's a draw!!";
+                    console.log( "You both chose:"+ playerSelection +" It's the same so it's a draw!!");
+                    return draw++;
                 }else if(playerSelection==="rock" && computerSelection==="scissors"){
-                    return "You chose:"+playerSelection+" The computer chose:"+computerSelection+"You Win!!";
+                    console.log( "You both chose:"+ playerSelection +" It's the same so it's a draw!!");
+                    return playerWins++
                 }else if(playerSelection==="paper"&& computerSelection=="rock"){
-                    return "You chose:"+playerSelection+" The computer chose:"+computerSelection+"You Win!!";
+                    console.log( "You both chose:"+ playerSelection +" It's the same so it's a draw!!");
+                    return playerWins++;
                 }else if(playerSelection==="scissors"&& computerSelection=="paper"){
-                    return "You chose:"+playerSelection+" The computer chose:"+computerSelection+"You Win!!";;
+                    console.log( "You both chose:"+ playerSelection +" It's the same so it's a draw!!"); 
+                   return playerWins++;
                 }else{
-                    return "You chose:" +playerSelection  +" The computer chose:"+computerSelection +" You lose!!";
+                    console.log("You chose:" +playerSelection  +" The computer chose:"+computerSelection +" You lose!!");
+                    return computerWins++;
                 }
             return
         }
         const game=()=>{
+             playerwins=0;
+             computerwins=0;
+             draw=0;
             let x=0;
             while(x<5){
                 playerSelection=prompt("Rock paper or scissors");
-                let computerSelection=computerPlay;
+                let computerSelection=computerPlay();
                 playGame(playerSelection, computerSelection);
                 x++;
+            }
+            console.log("Player wins:" +playerWins+ " Computer wins:"+computerWins+" Draws: " +draw)
+            if(computerwins===playerWins){
+              console.log( "It's a draw!");
+            }else if(computerWins>playerWins){
+                console.log("Computer won the match!");
+            }else {
+                console.log( "Player won the match");
             }
         }
         game();
