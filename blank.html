@@ -31,19 +31,18 @@
                     console.log( "You both chose:"+ playerSelection +" It's the same so it's a draw!!");
                     return draw++;
                 }else if(playerSelection==="rock" && computerSelection==="scissors"){
-                    console.log( "You both chose:"+ playerSelection +" It's the same so it's a draw!!");
+                    console.log("You chose:" +playerSelection  +" The computer chose:"+computerSelection +" You WIN!!");
                     return playerWins++
                 }else if(playerSelection==="paper"&& computerSelection=="rock"){
-                    console.log( "You both chose:"+ playerSelection +" It's the same so it's a draw!!");
+                    console.log("You chose:" +playerSelection  +" The computer chose:"+computerSelection +" You WIN!!");
                     return playerWins++;
                 }else if(playerSelection==="scissors"&& computerSelection=="paper"){
-                    console.log( "You both chose:"+ playerSelection +" It's the same so it's a draw!!"); 
+                    console.log("You chose:" +playerSelection  +" The computer chose:"+computerSelection +" You WIN!!");
                    return playerWins++;
                 }else{
                     console.log("You chose:" +playerSelection  +" The computer chose:"+computerSelection +" You lose!!");
                     return computerWins++;
                 }
-            return
         }
         const game=()=>{
              playerwins=0;
@@ -57,7 +56,7 @@
                 x++;
             }
             console.log("Player wins:" +playerWins+ " Computer wins:"+computerWins+" Draws: " +draw)
-            if(computerwins===playerWins){
+            if(computerWins===playerWins){
               console.log( "It's a draw!");
             }else if(computerWins>playerWins){
                 console.log("Computer won the match!");
